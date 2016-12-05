@@ -1,6 +1,18 @@
 ###   このページはCloud9の仮想環境上で、mishima.syk#9ハンズオン環境を作るための資料です。
 ##### 2016.12.05 kochi
 
+### Cloud9で仮想環境構築
++ Cloud9へアクセス
+https://c9.io/
++ アカウントを作る。適当な名前で。
++ signinする
++ workspacesで"Create a new workspace" をクリック
+++ workspace名：適当に。
+++ private/publicはpublicで
+++ templateはBlank
+++ "Create workspace"でOK
+
+### Cloud9の環境：画面右下のTerminalで作業する
 ##### カレントの確認
 ##### /home/uubuntu/workspace
     pwd
