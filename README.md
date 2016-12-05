@@ -2,20 +2,23 @@
 ##### 2016.12.05 kochi
 
 ### Cloud9で仮想環境構築
-+ Cloud9へアクセス
-https://c9.io/
++ Cloud9へアクセス　https://c9.io/
 + アカウントを作る。適当な名前で。
 + signinする
 + workspacesで"Create a new workspace" をクリック
-++ workspace名：適当に。
-++ private/publicはpublicで
-++ templateはBlank
-++ "Create workspace"でOK
++ workspace名：適当に。
++ private/publicはpublicで
++ templateはBlank
++ "Create workspace"でOK
 
-### Cloud9の環境：画面右下のTerminalで作業する
+### Cloud9の環境
+    画面右下のTerminalで作業する
 ##### カレントの確認
 ##### /home/uubuntu/workspace
     pwd
+##### コピペがうまく働かないので、この文章をgitでDownloadする
+    git clone https://github.com/kochi0603/mishima9/
+##### 画面左上にファイルが追加されるので、README.mdを開くと画面右上に文章が表示されて、コピペできるようになる。
 
 ### minicondaのインストール
 ##### minicondaをDownload
