@@ -1,23 +1,23 @@
-### このページはCloud9に仮想環境を構築後、mishima.syk#9のための環境づくりの資料です。
-### 2016.12.05 kochi
+##### このページはCloud9に仮想環境を構築後、mishima.syk#9のための環境づくりの資料です。
+##### 2016.12.05 kochi
 
-### カレントの確認
-### /home/uubuntu/workspace
+##### カレントの確認
+##### /home/uubuntu/workspace
 '''pwd
 
-### minicondaをDownload
-# Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
+##### minicondaをDownload
+##### Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-# 実行権限付与と、インストール
+##### 実行権限付与と、インストール
 chmod a+x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
 
-# パスを追加( ずっと使う人は.bashrcに追記するのがよい )
+##### パスを追加( ずっと使う人は.bashrcに追記するのがよい )
 export PATH=/home/ubuntu/miniconda3/bin:$PATH
 
-# 必要なライブラリをインストールする。
-# ただし、HDDが2GBなので、その都度、conda clean --tarball によって ダウンロードしたファイルを 削除する
+##### 必要なライブラリをインストールする。
+##### ただし、HDDが2GBなので、その都度、conda clean --tarball によって ダウンロードしたファイルを 削除する
 conda install -y -c conda-forge tensorflow
 conda install -y -c conda-forge keras=1.0.7
 conda clean —-tarballs
@@ -27,10 +27,10 @@ conda install jupyter matplotlib scikit-learn pandas
 conda clean --tarballs
 conda clean --index-cache
 
-# この段階で 123MB 程度残るはず
+##### この段階で 123MB 程度残るはず
 
-# jupyterの設定
-# 面倒なので最低限。ずっと使う人はパスワードを設定しましょう
+##### jupyterの設定
+##### 面倒なので最低限。ずっと使う人はパスワードを設定しましょう
 mkdir jupyter
 cd jupyter
 # 設定ファイルをつくる。↓のコマンドで
