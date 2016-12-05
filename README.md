@@ -1,13 +1,13 @@
-##### このページはCloud9に仮想環境を構築後、mishima.syk#9のための環境づくりの資料です。
-##### 2016.12.05 kochi
+##### このページはCloud9の仮想環境上で、mishima.syk#9ハンズオン環境を作るための資料です。
+###### 2016.12.05 kochi
 
-##### カレントの確認
-##### /home/uubuntu/workspace
+###### カレントの確認
+###### /home/uubuntu/workspace
 '''pwd
 
-##### minicondaをDownload
+###### minicondaをDownload
 ##### Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+'''wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 ##### 実行権限付与と、インストール
 chmod a+x Miniconda3-latest-Linux-x86_64.sh
