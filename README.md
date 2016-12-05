@@ -3,7 +3,9 @@
 
 ###### カレントの確認
 ###### /home/uubuntu/workspace
-'''pwd
+'''bash
+   pwd
+'''
 
 ###### minicondaをDownload
 ##### Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
