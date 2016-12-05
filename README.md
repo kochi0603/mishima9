@@ -1,14 +1,23 @@
-# mishima9
-pwd
-# /home/uubuntu/workspace
+# このページはCloud9に仮想環境を構築後、mishima.syk#9のための環境づくりの資料です。
+# 2016.12.05 kochi
 
+# カレントの確認
+# /home/uubuntu/workspace
+pwd
+
+# minicondaをDownload
+# Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
+# 実行権限付与と、インストール
 chmod a+x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
 
+# パスを追加( ずっと使う人は.bashrcに追記するのがよい )
 export PATH=/home/ubuntu/miniconda3/bin:$PATH
 
+# 必要なライブラリをインストールする。
+# ただし、HDDが2GBなので、その都度、conda clean --tarball によって ダウンロードしたファイルを 削除する
 conda install -y -c conda-forge tensorflow
 conda install -y -c conda-forge keras=1.0.7
 conda clean —-tarballs
@@ -18,26 +27,31 @@ conda install jupyter matplotlib scikit-learn pandas
 conda clean --tarballs
 conda clean --index-cache
 
-# 123MB 残る
+# この段階で 123MB 程度残るはず
 
-
+# jupyterの設定
+# 面倒なので最低限。ずっと使う人はパスワードを設定しましょう
 mkdir jupyter
 cd jupyter
+# 設定ファイルをつくる。↓のコマンドで
+# ~/.jupyter/jupyter_notebook_config.py が生成される
 jupyter notebook --generate-config
-#>>> Writing default config to: /home/ubuntu/.jupyter/jupyter_notebook_config.py
-python -c "from notebook.auth import passwd;print(passwd())"
-#>>> Enter password: #Jupyterのアクセス時に使うパスワードを入力する
-#>>> Verify password:
-#>>> 'sha1:......' #sha以降をコピーしておく
 
-echo 'c.NotebookApp.ip = "*"'             >> ~/.jupyter/jupyter_notebook_config.py
-echo 'c.NotebookApp.notebook_dir = "/home/ubuntu/workspace/jupyter"' >> ~/.jupyter/jupyter_notebook_config.py
-echo 'c.NotebookApp.open_browser = False' >> ~/.jupyter/jupyter_notebook_config.py
-echo 'c.NotebookApp.port = 8080'          >> ~/.jupyter/jupyter_notebook_config.py
-#echo 'c.NotebookApp.kernel_spec_manager_class = "environment_kernels.EnvironmentKernelSpecManager"' >> ~/.jupyter/jupyter_notebook_config.py
-#echo 'c.EnvironmentKernelSpecManager.env_dirs=["/home/ubuntu/workspace/.pyenv/versions/miniconda3-4.0.5/envs"]' >> ~/.jupyter/jupyter_notebook_config.py
+# ~/.jupyter/jupyter_notebook_config.py を編集する
+# ファイルの末尾に↓の4行を追加
+c.NotebookApp.ip = "*"
+c.NotebookApp.notebook_dir = "/home/ubuntu/workspace/jupyter"
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8080
 
+# jupyterを起動する
+jupyter notebook
 
+# ブラウザの別のタブを開き、↓のように開く
+# http://(仮想環境名).(アカウント名).c9users.io:8080/
 http://mishima9.kochi0603.c9users.io:8080/
 
-git clone https://github.com/Mishima-syk/9/tree/master/iwatobipen
+# ハンズオン用のデータセットをまるごとダウンロードする
+git clone https://github.com/Mishima-syk/9
+
+# おしまい
