@@ -20,7 +20,7 @@
 + コピペがうまく働かないので、この文章をgitでDownloadする
 
     git clone https://github.com/kochi0603/mishima9/
-    画面左上にファイルが追加されるので、README.mdを開くと画面右上に文章が表示されて、コピペできるようになる。
++ 画面左上にファイルが追加されるので、README.mdを開くと画面右上に文章が表示されて、コピペできるようになる。
 
 ### minicondaのインストール
 + minicondaをDownload
@@ -30,16 +30,17 @@
 
 + 実行権限付与と、インストール
 
+```
     chmod a+x Miniconda3-latest-Linux-x86_64.sh
     ./Miniconda3-latest-Linux-x86_64.sh
-
+```
 + パスを追加( ずっと使う人は.bashrcに追記するのがよい )
-
+```
     export PATH=/home/ubuntu/miniconda3/bin:$PATH
-
+```
 + 必要なライブラリをインストールする。
 + ただし、HDDが2GBなので、その都度、conda clean --tarball によって ダウンロードしたファイルを 削除する
-
+```
     conda install -y -c conda-forge tensorflow
     conda install -y -c conda-forge keras=1.0.7
     conda clean —-tarballs
@@ -48,38 +49,38 @@
     conda install jupyter matplotlib scikit-learn pandas
     conda clean --tarballs
     conda clean --index-cache
-
+```
 + この段階で 123MB 程度残るはず
 
 ### jupyterの設定
 + 面倒なので最低限。ずっと使う人はパスワードを設定しましょう
-
+```
     mkdir jupyter
     cd jupyter
-
+```
 + 設定ファイルをつくる。↓のコマンドで ( ~/.jupyter/jupyter_notebook_config.py が生成される )
-
+```
     jupyter notebook --generate-config
-
+```
 + ~/.jupyter/jupyter_notebook_config.py を編集する
 + ファイルの末尾に↓の4行を追加
-
+```
     c.NotebookApp.ip = "*"
     c.NotebookApp.notebook_dir = "/home/ubuntu/workspace/jupyter"
     c.NotebookApp.open_browser = False
     c.NotebookApp.port = 8080
-
+```
 ### jupyterを起動する
-
+```
     jupyter notebook
-
+```
 +ブラウザの別のタブを開き、↓のように開く
-
+```
     http://(仮想環境名).(アカウント名).c9users.io:8080/
     http://mishima9.kochi0603.c9users.io:8080/
-
+```
 + ハンズオン用のデータセットをまるごとダウンロードする
-
+```
     git clone https://github.com/Mishima-syk/9
-
+```
 ##### おしまい
