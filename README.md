@@ -1,10 +1,11 @@
-##### このページはCloud9の仮想環境上で、mishima.syk#9ハンズオン環境を作るための資料です。
+###   このページはCloud9の仮想環境上で、mishima.syk#9ハンズオン環境を作るための資料です。
 ##### 2016.12.05 kochi
 
 ##### カレントの確認
 ##### /home/uubuntu/workspace
     pwd
 
+### minicondaのインストール
 ##### minicondaをDownload
 ##### Cloud9はHDDが2GBなので、anacondaだと大きすぎる。miniconddaにする。
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -29,7 +30,7 @@
 
 ##### この段階で 123MB 程度残るはず
 
-##### jupyterの設定
+### jupyterの設定
 ##### 面倒なので最低限。ずっと使う人はパスワードを設定しましょう
     mkdir jupyter
     cd jupyter
@@ -51,7 +52,7 @@
 ##### http://(仮想環境名).(アカウント名).c9users.io:8080/
     http://mishima9.kochi0603.c9users.io:8080/
 
-##### ハンズオン用のデータセットをまるごとダウンロードする
+### ハンズオン用のデータセットをまるごとダウンロードする
     git clone https://github.com/Mishima-syk/9
 
 ##### おしまい
