@@ -34,6 +34,8 @@
     chmod a+x Miniconda3-latest-Linux-x86_64.sh
     ./Miniconda3-latest-Linux-x86_64.sh
 ```
++ yes -> Enter -> yes
+
 + パスを追加( ずっと使う人は.bashrcに追記するのがよい )
 ```
     export PATH=/home/ubuntu/miniconda3/bin:$PATH
