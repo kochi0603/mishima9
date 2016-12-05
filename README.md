@@ -45,9 +45,9 @@
 ```
     conda install -y -c conda-forge tensorflow
     conda install -y -c conda-forge keras=1.0.7
-    conda clean —-tarballs
+    conda clean --tarballs
     conda install -y -c rdkit rdkit=2016.03.4
-    conda clean —-tarballs
+    conda clean --tarballs
     conda install jupyter matplotlib scikit-learn pandas
     conda clean --tarballs
     conda clean --index-cache
